@@ -45,12 +45,12 @@ pipeline {
     }
 
     post {
-         success {
-            echo succeeded
+        success {
+            echo 'Build good!'
             githubNotify context: 'CI', status: 'SUCCESS', description: 'Build passed!'
         }
         failure {
-            echo failed
+            echo 'Build bad!'
             githubNotify context: 'CI', status: 'FAILURE', description: 'Build failed!'
         }
     }
