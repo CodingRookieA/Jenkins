@@ -2,21 +2,32 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Dependencies') {
+        stage('Setup Python venv') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh '''
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install --upgrade pip
+                pip install -r requirements.txt
+                '''
             }
         }
 
         stage('Lint') {
             steps {
-                sh 'flake8 app/'
+                sh '''
+                . venv/bin/activate
+                flake8 app/
+                '''
             }
         }
 
         stage('Test') {
             steps {
-                sh 'pytest'
+                sh '''
+                . venv/bin/activate
+                pytest
+                '''
             }
         }
     }
