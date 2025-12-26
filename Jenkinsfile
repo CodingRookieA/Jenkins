@@ -3,6 +3,15 @@ pipeline {
 
     stages {
         stage('Setup Python venv') {
+
+            stage('Debug workspace') {
+    steps {
+        sh '''
+        pwd
+        ls -la
+        '''
+    }
+}
             steps {
                 sh '''
                 python3 -m venv venv
@@ -12,6 +21,7 @@ pipeline {
                 '''
             }
         }
+
 
         stage('Lint') {
             steps {
