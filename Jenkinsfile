@@ -2,6 +2,16 @@ pipeline {
     agent any
 
     stages {
+
+        stage('Debug workspace') {
+            steps {
+                sh '''
+                pwd
+                ls -la
+                '''
+            }
+        }
+        
         stage('Setup Python venv') {
             steps {
                 sh '''
@@ -13,14 +23,6 @@ pipeline {
             }
         }
 
-        stage('Debug workspace') {
-            steps {
-                sh '''
-                pwd
-                ls -la
-                '''
-            }
-        }
 
         stage('Lint') {
             steps {
