@@ -1,11 +1,15 @@
 pipeline {
     agent any
 
-    options {
-        githubNotify context: 'CI', status: 'PENDING', description: 'Build queued...'
-    }
-    
     stages {
+
+        stage('Pending Notification') {
+            steps {
+                githubNotify context: 'CI',
+                             status: 'PENDING',
+                             description: 'Build queued...'
+            }
+        }
 
         stage('Debug workspace') {
             steps {
