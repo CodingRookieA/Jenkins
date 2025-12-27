@@ -74,5 +74,4 @@ These scenarios mirror common real-world failures in collaborative software team
 
 ---
 
-## Repository Structure
 
