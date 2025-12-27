@@ -18,6 +18,19 @@ A minimal Python application is intentionally used to keep attention on the CI p
 
 ---
 
+---
+
+## Technologies Used
+
+- **Jenkins** (Declarative Pipeline, Multibranch Pipeline)
+- **GitHub Webhooks**
+- **Python**
+- **pytest**
+- **flake8**
+- **Docker** (For running Jenkins server on Windows natively)
+
+---
+
 ## CI Pipeline Features
 
 ### Automated Triggers
