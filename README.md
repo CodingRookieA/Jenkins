@@ -31,6 +31,38 @@ A minimal Python application is intentionally used to keep attention on the CI p
 
 ---
 
+---
+
+
+## Directory Overview
+
+### Jenkinsfile
+Defines the CI pipeline as code, including dependency installation, linting, automated testing, and pull request validation using Jenkins multibranch pipelines.
+
+### requirements.txt
+Lists Python dependencies installed during each Jenkins build to ensure a consistent and reproducible execution environment.
+
+### app/
+Contains the application source code validated by the CI pipeline.
+
+- `main.py`
+
+### tests/
+Holds automated test cases executed on every pull request to verify correctness and prevent regressions before merge.
+
+- `test.py`
+
+### screenshots/
+Documents the end-to-end CI workflow and its impact on pull request quality:
+
+- `fail.png` — Pull request blocked due to a failed Jenkins build
+- `pending.png` — Pull request build triggered and awaiting CI results
+- `success.png` — All CI checks passed, allowing the pull request to be merged
+- `dashboard.png` — Jenkins multibranch pipeline dashboard showing all tracked branches
+- `pr-build.png` — Jenkins dashboard view of pull request–specific builds
+
+---
+
 ## CI Pipeline Features
 
 ### Automated Triggers
@@ -86,5 +118,6 @@ This project intentionally validated real CI failure cases, including:
 These scenarios mirror common real-world failures in collaborative software teams.
 
 ---
+
 
 
